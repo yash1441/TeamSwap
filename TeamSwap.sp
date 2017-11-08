@@ -44,9 +44,7 @@ public Action Event_PlayerDeath(Event event, const char[] name, bool dontBroadca
 	
 	if(GetClientTeam(attacker) == CS_TEAM_CT && GetClientTeam(victim) == CS_TEAM_T)
 	{
-		SwapClient[attacker] = true;
-		SwapClient[victim] = true;
-		//ChangeClientTeam(victim, CS_TEAM_CT);
+		SwapClient[attacker] = SwapClient[victim] = true;
 	}
 }
 
