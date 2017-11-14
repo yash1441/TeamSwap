@@ -3,7 +3,7 @@
 #define DEBUG
 
 #define PLUGIN_AUTHOR "Simon"
-#define PLUGIN_VERSION "1.1"
+#define PLUGIN_VERSION "1.2"
 
 #include <sourcemod>
 #include <sdktools>
@@ -54,7 +54,7 @@ public Action Event_RoundEnd(Event event, const char[] name, bool dontBroadcast)
 	{
 		if (SwapClient[i])
 		{
-			(GetClientTeam(i) == CS_TEAM_T) ? ChangeClientTeam(i, CS_TEAM_CT) : ChangeClientTeam(i, CS_TEAM_T);
+			(GetClientTeam(i) == CS_TEAM_T) ? CS_SwitchTeam(i, CS_TEAM_CT) : CS_SwitchTeam(i, CS_TEAM_T);
 			SwapClient[i] = false;
 		}
 	}
